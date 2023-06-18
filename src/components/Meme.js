@@ -1,13 +1,13 @@
 import memesData from "../data/memesData"
-import { random } from 'lodash';
 
 export default function Navbar() {
-    const handleClick = () => {
-        // console.log(memesData.data.memes[0].url)
-        // console.log({ url: memesData.data.memes[0].url })
-        const randomUrl = memesData.data.memes[random(0, memesData.data.memes.length)];
-        console.log(randomUrl.url)
+
+    const getMemeImg = () => {
+        const randomImg = Math.floor(Math.random() * memesData.data.memes.length);
+        console.log(memesData.data.memes[randomImg].url)
+        return memesData.data.memes[randomImg].url
     }
+    
     return (
         <main>
             <form action="" className="input-form">
@@ -16,7 +16,7 @@ export default function Navbar() {
                     <input className="input-bottom" placeholder="bottom text"></input>
                 </div>
             </form>
-            <button onClick={handleClick} className="submit-button">Get a new meme image</button>
+            <button onClick={getMemeImg} className="submit-button">Get a new meme image</button>
         </main>
     )
 }
