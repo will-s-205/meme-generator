@@ -43,8 +43,6 @@ nav>p {
 
 main {
   padding-top: 35px;
-  padding-left: 35px;
-  padding-right: 35px;
   max-width: 477px;
   margin: 0 auto;
 }
@@ -102,7 +100,7 @@ main {
   background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 530px) {
 
   nav {
     width: 100vw;
@@ -120,8 +118,8 @@ main {
 
   main {
     padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 }
