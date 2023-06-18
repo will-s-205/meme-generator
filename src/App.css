@@ -1,11 +1,17 @@
 * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
   margin: 0;
 }
 
 nav {
-  padding-left: 20px;
   display: flex;
   align-items: center;
+  padding-left: 20px;
+
   height: 65px;
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 }
@@ -21,6 +27,7 @@ nav>h1 {
 
 nav>p {
   margin-left: auto;
+
   padding-right: 45px;
   font-family: 'Inter';
   font-weight: 300;
@@ -29,8 +36,9 @@ nav>p {
 }
 
 @media (max-width: 400px) {
+
   nav>p {
-    padding-right: 5px;
+    padding-right: 15px;
     padding-left: 15px;
     text-align: center;
   }
@@ -38,4 +46,52 @@ nav>p {
   nav>h1 {
     text-align: center;
   }
+
+  
+}
+
+.input-form {
+  padding-top: 35px;
+  max-width: 550px;
+}
+
+.input-fields {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  height: 35px;
+}
+
+.input-fields>input {
+  width: 230px;
+  border-radius: 8px;
+  border: 1px solid #c4c3c3
+}
+
+.submit-button {
+  display: flex;
+  margin: 15px auto;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 4px #4c195e;
+  transition: all .3s ease;
+
+  width: 477px;
+  height: 40px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  border-radius: 8px;
+  border: none;
+
+  font-family: 'Karla';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.1em;
+  color: #FFFFFF;
+  align-items: center;
+}
+
+.submit-button:hover {
+  box-shadow: 1px 2px #101e31;
+  transition: all .3s ease;
 }
