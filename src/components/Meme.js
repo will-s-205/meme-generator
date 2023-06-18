@@ -4,10 +4,12 @@ export default function Navbar() {
 
     const getMemeImg = () => {
         const randomImg = Math.floor(Math.random() * memesData.data.memes.length);
-        console.log(memesData.data.memes[randomImg].url)
         return memesData.data.memes[randomImg].url
+        // OR use array destructuring
+        // const {url} = memesData.data.memes[randomImg];
+        // return url
     }
-    
+
     return (
         <main>
             <form action="" className="input-form">
