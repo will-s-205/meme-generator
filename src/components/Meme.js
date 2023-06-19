@@ -42,10 +42,10 @@ export default function Navbar() {
                     <input className="input-bottom" placeholder="bottom text"></input>
                 </div>
             </form>
-            <button onClick={GetMemeImg} className="submit-button">Get a new meme image</button>
+            {/* <button onClick={GetMemeImg} className="submit-button">Get a new meme image</button> */}
             <button onClick={downloadScreenshot} className="submit-button">Download</button>
             <div id='meme-screenshot'>
-                <img src={memeImg} className="meme-img" alt="meme img" />
+                <img src={memeImg} onClick={GetMemeImg} className="meme-img" alt="meme img" />
             </div>
         </main>
     )
