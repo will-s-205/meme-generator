@@ -37,6 +37,8 @@ nav>p {
 }
 
 .App {
+  margin-top: 100px;
+  align-self: start;
   background: #E5E5E5;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }
@@ -65,7 +67,8 @@ main {
 
 .submit-button {
   display: flex;
-  margin: 15px auto;
+  margin-top: 15px;
+  /* margin: 15px auto; */
   justify-content: center;
   cursor: pointer;
   box-shadow: 1px 4px #4c195e;
@@ -100,7 +103,20 @@ main {
   background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
 }
 
+.meme-img {
+  max-width: 477px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 35px auto 55px;
+  border-radius: 2px;
+}
+
 @media (max-width: 550px) {
+
+  .App{
+    margin-top: 0px;
+  }
 
   nav {
     width: 100vw;
