@@ -33,7 +33,6 @@ export default function Navbar() {
         setMemeImg(url)
         // OR
         // setMemeImg(memesData.data.memes[randomImg].url)
-
     }
 
     return (
