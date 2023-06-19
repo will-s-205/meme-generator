@@ -1,4 +1,4 @@
-import { createRef, useState } from "react";
+import { useState } from "react";
 import memesData from "../data/memesData"
 import html2canvas from "html2canvas";
 
@@ -15,7 +15,6 @@ export default function Navbar() {
             //after creating link you should delete dynamic link
         };
         html2canvas(document.getElementById("meme-screenshot"), {
-            letterRendering: 1,
             logging: true,
             letterRendering: 1,
             useCORS: true,
