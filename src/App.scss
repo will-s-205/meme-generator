@@ -108,13 +108,13 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 20px auto 55px;
-  border-radius: 2px;
+  margin: 20px auto 35px;
+  border-radius: 10px;
 }
 
 @media (max-width: 550px) {
 
-  .App{
+  .App {
     margin-top: 0px;
   }
 
@@ -133,9 +133,13 @@ main {
   }
 
   main {
-    padding-top: 35px;
+    padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .meme-img{
+    margin-bottom: 20px;
   }
 
 }
