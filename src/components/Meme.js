@@ -24,14 +24,28 @@ export default function Navbar() {
         });
     }
 
-    const [memeImg, setMemeImg] = useState('https://i.imgflip.com/odluv.jpg')
+    // const [memeImg, setMemeImg] = useState('https://i.imgflip.com/odluv.jpg')
 
-    const GetMemeImg = () => {
-        const randomImg = Math.floor(Math.random() * memesData.data.memes.length);
-        const { url } = memesData.data.memes[randomImg];
-        setMemeImg(url)
+    const [meme, setMeme] = useState({
+        topText: "",
+        botoomText: "",
+        randomImage: "https://i.imgflip.com/odluv.jpg"
+    })
+
+    const [allMemeImages, setAllMemeImages] = useState(memesData)
+
+    const getMemeImg = () => {
+        const randomImg = Math.floor(Math.random() * allMemeImages.data.memes.length);
+        const { url } = allMemeImages.data.memes[randomImg];
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url
+        }))
         // OR
-        // setMemeImg(memesData.data.memes[randomImg].url)
+        // setMeme(prevMeme => ({
+        //     ...prevMeme,
+        //     randomImage: allMemeImages.data.memes[randomImg].url
+        // }))
     }
 
     return (
@@ -42,10 +56,10 @@ export default function Navbar() {
                     <input className="input-bottom" placeholder="bottom text"></input>
                 </div>
             </form>
-            {/* <button onClick={GetMemeImg} className="submit-button">Get a new meme image</button> */}
+            {/* <button onClick={getMemeImg} className="submit-button">Get a new meme image</button> */}
             <button onClick={downloadScreenshot} className="submit-button">Download</button>
             <div id='meme-screenshot'>
-                <img src={memeImg} onClick={GetMemeImg} className="meme-img" alt="meme img" />
+                <img src={meme.randomImage} onClick={getMemeImg} className="meme-img" alt="meme img" />
             </div>
         </main>
     )
