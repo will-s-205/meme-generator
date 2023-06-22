@@ -87,9 +87,11 @@ export default function Navbar() {
                     onClick={getMemeImg}
                     className="meme-img"
                     alt="meme img"
-                />    
+                />
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
-                <small className="footer"><a href="https://will-s-205.github.io/meme-generator" target='_blank'>by William Step</a></small>
+                <small className="footer">
+                    <a href="https://will-s-205.github.io/meme-generator" target='_blank'>by William Step</a>
+                </small>
             </div>
         </main>
     )
