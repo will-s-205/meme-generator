@@ -14,7 +14,7 @@ nav {
 
   width: 550px;
   height: 65px;
-  background: radial-gradient(circle, rgba(196,72,0,1) 0%, rgba(176,0,0,1) 67%);
+  background: radial-gradient(circle, rgba(196, 72, 0, 1) 0%, rgba(176, 0, 0, 1) 67%);
 }
 
 nav>h1 {
@@ -74,7 +74,7 @@ main {
 
   width: 100%;
   height: 40px;
-  background: radial-gradient(circle, rgba(196,72,0,1) 0%, rgba(176,0,0,1) 67%);
+  background: radial-gradient(circle, rgba(196, 72, 0, 1) 0%, rgba(176, 0, 0, 1) 67%);
   border-radius: 8px;
   border: none;
 
@@ -109,6 +109,44 @@ main {
   margin: 35px auto 35px;
 }
 
+
+.meme-text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.bottom {
+  margin-top: -120px;
+}
+
+.bottom > h2 {
+  width: 100px;
+}
+
+.top {
+  margin-top: 20px;
+}
+
 @media (max-width: 550px) {
 
   .App {
@@ -138,6 +176,14 @@ main {
   .meme-img {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .bottom {
+    margin-top: -60px;
+  }
+
+  .meme-text {
+    font-size: 1rem;
   }
 
 }

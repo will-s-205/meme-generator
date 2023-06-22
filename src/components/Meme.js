@@ -24,11 +24,9 @@ export default function Navbar() {
         });
     }
 
-    // const [memeImg, setMemeImg] = useState('https://i.imgflip.com/odluv.jpg')
-
     const [meme, setMeme] = useState({
         topText: "",
-        botoomText: "",
+        bottomText: "",
         randomImage: "https://i.imgflip.com/odluv.jpg"
     })
 
@@ -48,18 +46,49 @@ export default function Navbar() {
         // }))
     }
 
+    const handleFieldChange = (event) => {
+        const { name, value } = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
     return (
         <main>
             <form action="" className="input-form">
                 <div className="input-fields">
-                    <input className="input-top" placeholder="top text"></input>
-                    <input className="input-bottom" placeholder="bottom text"></input>
+                    <input
+                        className="input-top"
+                        placeholder="top text"
+                        name="topText"
+                        value={meme.topText}
+                        onChange={handleFieldChange}
+                    ></input>
+                    <input
+                        className="input-bottom"
+                        placeholder="bottom text"
+                        name="bottomText"
+                        value={meme.bottomText}
+                        onChange={handleFieldChange}
+                    ></input>
                 </div>
             </form>
             {/* <button onClick={getMemeImg} className="submit-button">Get a new meme image</button> */}
-            <button onClick={downloadScreenshot} className="submit-button">Download</button>
+            <button
+                onClick={downloadScreenshot}
+                className="submit-button">
+                Download
+            </button>
             <div id='meme-screenshot'>
-                <img src={meme.randomImage} onClick={getMemeImg} className="meme-img" alt="meme img" />
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <img
+                    src={meme.randomImage}
+                    onClick={getMemeImg}
+                    className="meme-img"
+                    alt="meme img"
+                />    
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )
