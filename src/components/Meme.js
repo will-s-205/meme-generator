@@ -88,8 +88,13 @@ export default function Navbar() {
                     className="meme-img"
                     alt="meme img"
                 />
-                <h2 className="meme-text bottom">{meme.bottomText}</h2>                
-                    <a className="footer" href="https://will-s-205.github.io/meme-generator" target='_blank'>by William Step</a>                
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
+                <a
+                    className="footer"
+                    href="https://will-s-205.github.io/meme-generator"
+                    target='_blank'>
+                    by William Step
+                </a>
             </div>
         </main>
     )

@@ -75,6 +75,7 @@ main {
   justify-content: center;
   cursor: pointer;
   box-shadow: 1px 4px #4c195e;
+  text-shadow: 0 0 10px #000;
   transition: all .3s ease;
 
   width: 100%;
@@ -150,24 +151,15 @@ main {
 .footer {
   position: absolute;
   margin-top: 10px;
-  // width: 80%;
-  // text-align: center;
-  // margin: 0 auto;
-  // bottom: 0;
+  padding-bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  // padding-bottom: 15px;
-  // font-weight: 100px;
-  // font-weight: bold;
-  // justify-content: center;
-  background-color: transparent;
+  // background-color: transparent;
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
-  a {
-
-  }
+  // background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
 }
 
 @media (max-width: 550px) {
