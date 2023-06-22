@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main: #fff
+}
+
 body {
   font-family: "Karla", sans-serif;
   margin: 0;
@@ -23,7 +27,7 @@ nav>h1 {
   font-weight: 500;
   font-size: 20.7482px;
   letter-spacing: -0.1em;
-  color: #FFFFFF;
+  color: var(--main);
 }
 
 nav>p {
@@ -34,7 +38,7 @@ nav>p {
   font-weight: 300;
   font-weight: bold;
   font-size: 12px;
-  color: #FFFFFF;
+  color: var(--main);;
 }
 
 .App {
@@ -83,7 +87,7 @@ main {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: -0.1em;
-  color: #FFFFFF;
+  color: var(--main);;
   align-items: center;
 }
 
@@ -106,7 +110,7 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 35px auto 35px;
+  margin: 20px auto 35px;
 }
 
 
@@ -121,7 +125,7 @@ main {
   font-family: impact, sans-serif;
   font-size: 2em;
   text-transform: uppercase;
-  color: white;
+  color: var(--main);
   letter-spacing: 1px;
   text-shadow:
     2px 2px 0 #000,
@@ -139,12 +143,25 @@ main {
   margin-top: -120px;
 }
 
-.bottom > h2 {
-  width: 100px;
-}
-
 .top {
   margin-top: 20px;
+}
+
+.footer {
+  display: flex;
+  margin-top: -20px;
+  padding-bottom: 15px;
+  font-weight: 100px;
+  font-weight: bold;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: darkgray;
+    // font-weight: bold;
+  }
 }
 
 @media (max-width: 550px) {
@@ -184,6 +201,10 @@ main {
 
   .meme-text {
     font-size: 1rem;
+  }
+
+  .footer {
+    margin-top: -10px;
   }
 
 }
