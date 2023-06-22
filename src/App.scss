@@ -4,6 +4,15 @@
 
 :root {
   --main: #fff;
+  background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
+}
+
+#root {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -98,15 +107,6 @@ main {
   transition: all .3s ease;
 }
 
-#root {
-  max-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
-}
-
 .meme-img {
   max-width: 477px;
   width: 100%;
@@ -154,12 +154,10 @@ main {
   padding-bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  // background-color: transparent;
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
-  // background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
 }
 
 @media (max-width: 550px) {
