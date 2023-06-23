@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import memesData from "../data/memesData"
 import html2canvas from "html2canvas";
 
-const url ='https://api.imglip.com/get_memes';
+const url ='https://api.imgflip.com/get_memes';
 
 export default function Navbar() {
 
