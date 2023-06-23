@@ -22,14 +22,15 @@ export default function Navbar() {
             useCORS: true,
         }).then(function (canvas) {
             var myImage = canvas.toDataURL();
-            downloadURI(myImage, "meme.png");
+            downloadURI(myImage, `"${meme.name}.png"`);
         });
     }
 
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
-        randomImage: "https://i.imgflip.com/odluv.jpg"
+        randomImage: "https://i.imgflip.com/odluv.jpg",
+        name: ""
     })
 
     const [allMemes, setAllMeme] = useState()
@@ -46,10 +47,11 @@ export default function Navbar() {
 
     const GetMemeImg = () => {
         const randomImg = Math.floor(Math.random() * allMemes.length);
-        const { url } = allMemes[randomImg];
+        const { url, name } = allMemes[randomImg];
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: url
+            randomImage: url,
+            name: name
         }))
     }
 
