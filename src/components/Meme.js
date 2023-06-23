@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-// import memesData from "../data/memesData"
+import memesData from "../data/memesData"
 import html2canvas from "html2canvas";
 
-const url ='https://api.imgflip.com/get_memes';
+const url ='https://api.imglip.com/get_memes';
 
 export default function Navbar() {
 
@@ -38,6 +38,10 @@ export default function Navbar() {
             fetch(url)
                 .then(res => res.json())
                 .then(data => setAllMeme(data.data.memes))
+                .catch((error) => {
+                    console.log(error);
+                    setAllMeme(memesData.data.memes)
+                });
         }, [])
 
     const GetMemeImg = () => {
