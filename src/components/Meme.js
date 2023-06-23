@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import memesData from "../data/memesData"
 import html2canvas from "html2canvas";
 
 export default function Navbar() {
 
-    const downloadScreenshot = () => {
+    const DownloadScreenshot = () => {
         function downloadURI(uri, name) {
             var link = document.createElement("a");
 
@@ -32,7 +32,18 @@ export default function Navbar() {
 
     const [allMemeImages, setAllMemeImages] = useState(memesData)
 
-    const getMemeImg = () => {
+    const FetchMemeImg = () => {
+        const randomImg = Math.floor(Math.random() * allMemeImages.data.memes.length);
+
+        React.useEffect(function() {
+            fetch("https://api.imgflip.com/get_memes")
+                .then(res => res.json())
+                .then(data => console.log(data))
+                // .then(data => setAllMemeImages(data))
+        }, [meme])
+    }
+
+    const GetMemeImg = () => {
         const randomImg = Math.floor(Math.random() * allMemeImages.data.memes.length);
         const { url } = allMemeImages.data.memes[randomImg];
         setMeme(prevMeme => ({
@@ -46,7 +57,7 @@ export default function Navbar() {
         // }))
     }
 
-    const handleFieldChange = (event) => {
+    const HandleFieldChange = (event) => {
         const { name, value } = event.target
         setMeme(prevMeme => ({
             ...prevMeme,
@@ -63,20 +74,20 @@ export default function Navbar() {
                         placeholder="top text"
                         name="topText"
                         value={meme.topText}
-                        onChange={handleFieldChange}
+                        onChange={HandleFieldChange}
                     ></input>
                     <input
                         className="input-bottom"
                         placeholder="bottom text"
                         name="bottomText"
                         value={meme.bottomText}
-                        onChange={handleFieldChange}
+                        onChange={HandleFieldChange}
                     ></input>
                 </div>
             </form>
             {/* <button onClick={getMemeImg} className="submit-button">Get a new meme image</button> */}
             <button
-                onClick={downloadScreenshot}
+                onClick={DownloadScreenshot}
                 className="submit-button">
                 Download
             </button>
@@ -84,7 +95,7 @@ export default function Navbar() {
                 <h2 className="meme-text top">{meme.topText}</h2>
                 <img
                     src={meme.randomImage}
-                    onClick={getMemeImg}
+                    onClick={GetMemeImg}
                     className="meme-img"
                     alt="meme img"
                 />
