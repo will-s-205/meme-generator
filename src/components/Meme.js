@@ -7,6 +7,7 @@ const url ='https://api.imgflip.com/get_memes';
 export default function Navbar() {
 
     const DownloadScreenshot = () => {
+        const imgName = `${meme.name}`
         function downloadURI(uri, name) {
             var link = document.createElement("a");
 
@@ -22,7 +23,7 @@ export default function Navbar() {
             useCORS: true,
         }).then(function (canvas) {
             var myImage = canvas.toDataURL();
-            downloadURI(myImage, `${meme.name}`+".png");
+            downloadURI(myImage, imgName + ".png");
         });
     }
 
@@ -32,19 +33,30 @@ export default function Navbar() {
         randomImage: "https://i.imgflip.com/odluv.jpg",
         name: "Dr Evil Laser"
     })
-    console.log(meme.name)
 
     const [allMemes, setAllMeme] = useState()
 
-        useEffect(() => {
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setAllMeme(data.data.memes))
-                .catch((error) => {
-                    console.log(error);
-                    setAllMeme(memesData.data.memes)
-                });
-        }, [])
+    useEffect(() => {
+        async function getMemes() {
+            const res = await fetch(url)
+            const data = await res.json()
+            setAllMeme(data.data.memes)
+        }
+        getMemes().catch((error) => {
+            console.log(error);
+            setAllMeme(memesData.data.memes)
+        });
+    }, [])
+    // OR use 'then' intead of async/await methods
+    // useEffect(() => {
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setAllMeme(data.data.memes))
+    //         .catch((error) => {
+    //             console.log(error);
+    //             setAllMeme(memesData.data.memes)
+    //         });
+    // }, [])
 
     const GetMemeImg = () => {
         const randomImg = Math.floor(Math.random() * allMemes.length);
