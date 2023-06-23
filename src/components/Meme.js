@@ -22,7 +22,7 @@ export default function Navbar() {
             useCORS: true,
         }).then(function (canvas) {
             var myImage = canvas.toDataURL();
-            downloadURI(myImage, `"${meme.name}.png"`);
+            downloadURI(myImage, `${meme.name}`+".png");
         });
     }
 
