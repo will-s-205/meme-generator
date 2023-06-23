@@ -30,8 +30,9 @@ export default function Navbar() {
         topText: "",
         bottomText: "",
         randomImage: "https://i.imgflip.com/odluv.jpg",
-        name: ""
+        name: "Dr Evil Laser"
     })
+    console.log(meme.name)
 
     const [allMemes, setAllMeme] = useState()
 

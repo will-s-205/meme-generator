@@ -611,14 +611,14 @@ export default {
                 "height": 368,
                 "box_count": 2
             },
-            {
-                "id": "61582",
-                "name": "Creepy Condescending Wonka",
-                "url": "https://i.imgflip.com/1bim.jpg",
-                "width": 550,
-                "height": 545,
-                "box_count": 2
-            },
+            // {
+            //     "id": "61582",
+            //     "name": "Creepy Condescending Wonka",
+            //     "url": "https://i.imgflip.com/1bim.jpg",
+            //     "width": 550,
+            //     "height": 545,
+            //     "box_count": 2
+            // },
             {
                 "id": "8279814",
                 "name": "Cute Cat",
