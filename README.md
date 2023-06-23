@@ -8,4 +8,4 @@ App created as a part of efforts to learn and practice React.js
 * Using Fetch API
 * Building apps with React and React Hooks
 * Creating responsive layouts
-* Downloading screenshots functionality
+* Screenshot downloading functionality
