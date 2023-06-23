@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import memesData from "../data/memesData"
+import { useState, useEffect } from "react";
+// import memesData from "../data/memesData"
 import html2canvas from "html2canvas";
+
+const url ='https://api.imgflip.com/get_memes';
 
 export default function Navbar() {
 
@@ -30,31 +32,21 @@ export default function Navbar() {
         randomImage: "https://i.imgflip.com/odluv.jpg"
     })
 
-    const [allMemeImages, setAllMemeImages] = useState(memesData)
+    const [allMemes, setAllMeme] = useState()
 
-    const FetchMemeImg = () => {
-        const randomImg = Math.floor(Math.random() * allMemeImages.data.memes.length);
-
-        React.useEffect(function() {
-            fetch("https://api.imgflip.com/get_memes")
+        useEffect(() => {
+            fetch(url)
                 .then(res => res.json())
-                .then(data => console.log(data))
-                // .then(data => setAllMemeImages(data))
-        }, [meme])
-    }
+                .then(data => setAllMeme(data.data.memes))
+        }, [])
 
     const GetMemeImg = () => {
-        const randomImg = Math.floor(Math.random() * allMemeImages.data.memes.length);
-        const { url } = allMemeImages.data.memes[randomImg];
+        const randomImg = Math.floor(Math.random() * allMemes.length);
+        const { url } = allMemes[randomImg];
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         }))
-        // OR
-        // setMeme(prevMeme => ({
-        //     ...prevMeme,
-        //     randomImage: allMemeImages.data.memes[randomImg].url
-        // }))
     }
 
     const HandleFieldChange = (event) => {
@@ -85,7 +77,7 @@ export default function Navbar() {
                     ></input>
                 </div>
             </form>
-            {/* <button onClick={getMemeImg} className="submit-button">Get a new meme image</button> */}
+            {/* <button onClick={GetMemeImg} className="submit-button">Get a new meme image</button> */}
             <button
                 onClick={DownloadScreenshot}
                 className="submit-button">
@@ -103,7 +95,8 @@ export default function Navbar() {
                 <small><a
                     className="footer"
                     href="https://github.com/will-s-205/meme-generator"
-                    target='_blank'>
+                    target='_blank'
+                    rel="noreferrer">
                     by William Step
                 </a></small>
             </div>
