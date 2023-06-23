@@ -21,17 +21,18 @@ body {
   text-shadow: 0 0 5px #000;
 }
 
-nav {
+header {
   display: flex;
   align-items: center;
   padding-left: 20px;
+  border-radius: 10px 10px 0 0;
 
   width: 550px;
   height: 65px;
   background: radial-gradient(circle, rgba(196, 72, 0, 1) 0%, rgba(176, 0, 0, 1) 67%);
 }
 
-nav>h1 {
+header>h1 {
   padding-left: 7px;
   font-family: 'Karla';
   font-weight: 500;
@@ -40,7 +41,7 @@ nav>h1 {
   color: var(--main);
 }
 
-nav>p {
+header>p {
   margin-left: auto;
 
   padding-right: 35px;
@@ -56,6 +57,7 @@ nav>p {
   align-self: start;
   background: #E5E5E5;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 main {
@@ -112,7 +114,7 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 20px auto 35px;
+  margin: 35px auto 35px;
 }
 
 .meme-text {
@@ -164,19 +166,21 @@ main {
 
   .App {
     margin-top: 0px;
+    border-radius: 0;
   }
 
-  nav {
+  header {
     width: 100vw;
+    border-radius: 0;
   }
 
-  nav>p {
+  header>p {
     padding-right: 15px;
     padding-left: 15px;
     text-align: center;
   }
 
-  nav>h1 {
+  header>h1 {
     text-align: center;
   }
 
