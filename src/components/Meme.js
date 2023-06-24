@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 
 const url ='https://api.imgflip.com/get_memes';
 
-export default function Navbar() {
+export default function Meme() {
 
     const DownloadScreenshot = () => {
         const imgName = `${meme.name}`
